@@ -1,0 +1,13 @@
+type = 'swc'
+
+srcDirs = [
+	'src/main/as'
+]
+
+resourceDirs = [
+	'src/main/asresources'
+]
+
+dependencies {
+	external project(':multiproject-no-conventions:util')
+}

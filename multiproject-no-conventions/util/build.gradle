@@ -1,0 +1,9 @@
+type = 'swc'
+
+srcDirs = [
+	'src/main/as'
+]
+
+resourceDirs = [
+	'src/main/asresources'
+]

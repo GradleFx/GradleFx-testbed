@@ -1,0 +1,7 @@
+type = 'swc'
+
+output = 'domain-0.1'
+
+dependencies {
+	external project(':multiproject-all-conventions:util')
+}
