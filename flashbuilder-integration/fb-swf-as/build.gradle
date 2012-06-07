@@ -1,0 +1,9 @@
+type = 'swf'
+frameworkLinkage = 'none'
+mainClass = 'org/gradlefx/MainTestApp.as'
+locales = ['nl_BE', 'fr_BE']
+
+dependencies {
+    external project(':fb-swc-as')
+	merged files(parent.file('dependencies/as3commons-collections-1.1.swc'))
+}

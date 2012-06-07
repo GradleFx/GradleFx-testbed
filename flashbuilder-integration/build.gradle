@@ -1,0 +1,29 @@
+buildscript {
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+	dependencies {
+		classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.4.3-beta'
+	}
+}
+
+subprojects { subproject ->
+	apply plugin: 'gradlefx'
+	apply plugin: 'flashbuilder'
+
+	repositories {
+   		mavenCentral()
+	}
+
+	flashbuilderClean << {
+		['build', 'src'].each {
+            File file = project.file it
+            if (file.exists()) {
+                LOG.info "\t$it"
+                file.isFile() ? file.delete() : file.deleteDir()
+            }
+		}	
+	}
+
+}
