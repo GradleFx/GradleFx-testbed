@@ -1,0 +1,8 @@
+type = 'swf'
+mainClass = 'org/gradlefx/MainTestApp.mxml'
+
+dependencies {
+    merged project(':fb-swc-as')
+	rsl project(':fb-swc-fx')
+	theme files(parent.file('dependencies/wireframe.swc'))
+}

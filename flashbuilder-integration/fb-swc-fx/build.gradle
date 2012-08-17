@@ -1,0 +1,6 @@
+type = 'swc'
+
+dependencies {
+    external project(':fb-swc-as')
+}
+
