@@ -1,11 +1,10 @@
 buildscript {
 	repositories {
-		mavenLocal()
 		mavenCentral()
-		//maven { url 'https://oss.sonatype.org/content/repositories/orggradlefx-351/' }
+		maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
 	}
 	dependencies {
-		classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.5'
+		classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.5-SNAPSHOT'
 	}
 }
 
