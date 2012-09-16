@@ -4,7 +4,7 @@ buildscript {
 		maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
 	}
 	dependencies {
-		classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.5.x'
+		classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.5.x-SNAPSHOT'
 	}
 	
 	configurations.all { 
@@ -20,4 +20,4 @@ task wrapper(type: Wrapper) {
     jarFile = 'buildSrc/wrapper/gradle.jar'
 }
 
-defaultTasks 'clean', 'flashbuilderClean', 'test', 'compile', 'package', 'war', 'asdoc', 'flashbuilder'
+defaultTasks 'clean', 'flashbuilderClean', 'test', 'compileFlex', 'compileJava', 'package', 'war', 'asdoc', 'flashbuilder'

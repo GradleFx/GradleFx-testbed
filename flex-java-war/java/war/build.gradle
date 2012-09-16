@@ -3,7 +3,7 @@ apply plugin: 'jetty'
 
 
 war {
-	dependsOn ':flex-java-war:flex:swf:compile'
+	dependsOn ':flex-java-war:flex:swf:compileFlex'
 	from(project(':flex-java-war:flex:swf').buildDir)
 }
 
