@@ -4,7 +4,7 @@ buildscript {
 		maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
 	}
 	dependencies {
-		classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.5-SNAPSHOT'
+		classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.5.x'
 	}
 	
 	configurations.all { 
@@ -15,7 +15,7 @@ buildscript {
 task wrapper(type: Wrapper) {
     group = 'Buildmaster'
     description = 'Generates gradlew and gradlew.bat bootstrap scripts'
-    gradleVersion = '1.0'
+    gradleVersion = '1.1'
     // place jar file and properties into a subdirectory to avoid root dir clutter
     jarFile = 'buildSrc/wrapper/gradle.jar'
 }
