@@ -7,13 +7,29 @@ type = 'air'
 
 repositories {
 	mavenRepo name: 'yoolab-releases',      url: "http://projects.yoolab.org/maven/content/repositories/releases"
+	add(new org.apache.ivy.plugins.resolver.URLResolver()) {
+		name = 'Apache'
+		addArtifactPattern 'http://apache.cu.be/incubator/flex/4.8.0-incubating/binaries/[module]-[revision]-incubating-bin.[ext]'
+	}
+	
+	add(new org.apache.ivy.plugins.resolver.URLResolver()) {
+		name = 'Adobe Air SDK'
+		addArtifactPattern 'http://download.macromedia.com/air/win/download/[revision]/[module].[ext]'
+	}
 }
 
 //dependency versions
 as3commons_lang_version = '0.3.2'
 
 dependencies {
+	flexSDK group: 'org.apache', name: 'apache-flex-sdk', version: '4.8.0', ext: 'tar.gz'
+	airSDK group: 'com.adobe', name: 'AdobeAIRSDK', version: '3.4', ext: 'zip'
+		
 	merged group: 'org.as3commons', name: 'as3commons-lang', version: as3commons_lang_version, ext: 'swc'
+}
+
+sdkAutoInstall {
+	showPrompts	= false
 }
 
 air { 
