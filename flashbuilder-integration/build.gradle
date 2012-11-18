@@ -4,20 +4,21 @@ buildscript {
 		mavenCentral()
 	}
 	dependencies {
-		classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.4.3-beta'
+		classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.6'
 	}
 }
 
 subprojects { subproject ->
 	apply plugin: 'gradlefx'
 	apply plugin: 'flashbuilder'
+	flexHome = 'C:/RIAstar/sdk/flex-4.6'
 
 	repositories {
    		mavenCentral()
 	}
 
 	flashbuilderClean << {
-		['build', 'src'].each {
+		['build', 'src', 'doc'].each {
             File file = project.file it
             if (file.exists()) {
                 LOG.info "\t$it"
