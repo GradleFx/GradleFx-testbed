@@ -4,3 +4,8 @@ build
 *.iml
 .orig
 publish
+doc
+*.actionScriptProperties
+*.flexProperties
+*.project
+*.flexLibProperties

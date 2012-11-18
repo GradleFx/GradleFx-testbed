@@ -3,6 +3,7 @@ defaultTasks 'clean', 'test', 'compile'
 subprojects {
 
 	apply plugin: 'gradlefx'
+	apply plugin: 'flashbuilder'
 
 	version = '1.0-SNAPSHOT'
 

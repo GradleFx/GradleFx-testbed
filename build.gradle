@@ -1,11 +1,23 @@
 buildscript {
 	repositories {
-		mavenLocal()
 		mavenCentral()
+		maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
 	}
 	dependencies {
-		classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.6'
+		classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.6.1-SNAPSHOT'
+	}
+	
+	configurations.all { 
+		resolutionStrategy.cacheChangingModulesFor 0, 'seconds' 
 	}
 }
 
-defaultTasks 'clean', 'test', 'compile', 'package', 'war'
+task wrapper(type: Wrapper) {
+    group = 'Buildmaster'
+    description = 'Generates gradlew and gradlew.bat bootstrap scripts'
+    gradleVersion = '1.1'
+    // place jar file and properties into a subdirectory to avoid root dir clutter
+    jarFile = 'buildSrc/wrapper/gradle.jar'
+}
+
+defaultTasks 'clean', 'flashbuilderClean', 'test', 'compileFlex', 'compileJava', 'package', 'war', 'asdoc', 'flashbuilder'
