@@ -4,14 +4,14 @@ buildscript {
 		maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
 	}
 	dependencies {
-		classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.6.1-SNAPSHOT'
+		classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.6.4'
 	}
 }
 
 subprojects { subproject ->
 	apply plugin: 'gradlefx'
 	apply plugin: 'flashbuilder'
-	flexHome = 'C:/RIAstar/sdk/flex-4.6'
+	flexHome =  System.getenv()['FLEX_HOME']
 
 	repositories {
    		mavenCentral()
