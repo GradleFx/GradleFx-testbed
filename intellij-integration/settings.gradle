@@ -1,1 +1,1 @@
-include 'iml-swc-as', 'iml-swf-as'
+include 'iml-swc-as', 'iml-swf-as', 'iml-swc-fx', 'iml-swf-fx'

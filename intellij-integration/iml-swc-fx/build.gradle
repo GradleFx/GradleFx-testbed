@@ -1,0 +1,6 @@
+type = 'swc'
+
+dependencies {
+    external project(':iml-swc-as')
+}
+

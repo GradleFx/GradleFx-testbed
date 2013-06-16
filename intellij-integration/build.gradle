@@ -17,7 +17,7 @@ subprojects {
 	}
 
 	ideaClean << {
-		['build', 'src', 'doc'].each {
+		['build', 'bin-debug', 'src', 'doc'].each {
             File file = project.file it
             if (file.exists()) {
                 LOG.info "\t$it"
