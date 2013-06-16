@@ -8,12 +8,15 @@ buildscript {
 subprojects {
 	apply plugin: 'gradlefx'
 	apply plugin: 'ideafx'
+	flexHome =  System.getenv()['FLEX_HOME']
+	
+	ideaFxModuleSdkName = 'flex_sdk_4.6'
 	
 	repositories {
    		mavenCentral()
 	}
 
-	flashbuilderClean << {
+	ideaClean << {
 		['build', 'src', 'doc'].each {
             File file = project.file it
             if (file.exists()) {
