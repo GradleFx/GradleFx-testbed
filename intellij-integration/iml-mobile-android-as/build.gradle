@@ -1,0 +1,12 @@
+type = 'mobile'
+frameworkLinkage = 'none'
+mainClass = 'MainTestApp.as'
+air {
+		applicationDescriptor   "src/main/actionscript/MainTestApp-app.xml"
+		storepass				'gradlefx'
+}
+
+airMobile {
+    platform = 'android'
+    target = 'apk'
+}
