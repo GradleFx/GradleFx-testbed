@@ -1,0 +1,6 @@
+type = 'mobile'
+mainClass = 'MainTestApp.mxml'
+air {
+		applicationDescriptor   "src/main/actionscript/MainTestApp-app.xml"
+		storepass				'gradlefx'
+}
