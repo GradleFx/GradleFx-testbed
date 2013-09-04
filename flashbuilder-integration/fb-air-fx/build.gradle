@@ -1,1 +1,6 @@
 type = 'air'
+
+air { 
+	storepass			'gradlefx'
+	includeFileTrees =	[fileTree(dir: 'src/main/actionscript/', include: 'assets/appIcon.png')]
+}

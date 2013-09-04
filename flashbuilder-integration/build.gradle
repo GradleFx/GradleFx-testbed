@@ -1,24 +1,15 @@
-buildscript {
-	repositories {
-		mavenCentral()
-		maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
-	}
-	dependencies {
-		classpath group: 'org.gradlefx', name: 'gradlefx', version: '0.6.4'
-	}
-}
+defaultTasks 'flashbuilderClean', 'flashbuilder'
 
 subprojects { subproject ->
 	apply plugin: 'gradlefx'
 	apply plugin: 'flashbuilder'
-	flexHome =  System.getenv()['FLEX_HOME']
 
 	repositories {
    		mavenCentral()
 	}
 
 	flashbuilderClean << {
-		['build', 'src', 'doc'].each {
+		['build', 'doc'].each {
             File file = project.file it
             if (file.exists()) {
                 LOG.info "\t$it"

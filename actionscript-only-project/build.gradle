@@ -1,0 +1,9 @@
+apply plugin: 'gradlefx'
+
+defaultTasks 'clean', 'compile'
+
+version = '1.0-SNAPSHOT'
+type = 'swf'
+mainClass = 'Main.as'
+
+frameworkLinkage = 'none'
