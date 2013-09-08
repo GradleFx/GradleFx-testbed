@@ -2,7 +2,7 @@ type = 'swf'
 mainClass = 'org/gradlefx/MainTestApp.mxml'
 
 dependencies {
-    merged project(':iml-swc-as')
-	rsl project(':iml-swc-fx')
+    merged project(':intellij-integration:iml-swc-as')
+	rsl project(':intellij-integration:iml-swc-fx')
 	theme files(parent.file('dependencies/wireframe.swc')) //it will be just merged dependency
 }

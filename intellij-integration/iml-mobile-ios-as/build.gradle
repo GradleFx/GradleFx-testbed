@@ -15,3 +15,7 @@ airMobile {
     provisioning_profile = 'iml-mobile-ios-as.mobileprovision'
     platformSdk = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk"
 }
+
+additionalCompilerOptions = [
+	'-external-library-path+=libs/player/{targetPlayerMajorVersion}.{targetPlayerMinorVersion}/playerglobal.swc'
+]

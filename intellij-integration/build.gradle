@@ -1,14 +1,8 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-}
-
+defaultTasks 'ideaClean', 'idea'
 
 subprojects {
 	apply plugin: 'gradlefx'
 	apply plugin: 'ideafx'
-	flexHome =  System.getenv()['FLEX_HOME']
 	
 	ideaFxModuleSdkName = 'flex_sdk_4.6'
 	

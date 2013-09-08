@@ -19,4 +19,4 @@ task wrapper(type: Wrapper) {
     jarFile = 'buildSrc/wrapper/gradle.jar'
 }
 
-defaultTasks 'clean', 'flashbuilderClean', 'test', 'compileFlex', 'compileJava', 'package', 'war', 'asdoc', 'flashbuilder'
+defaultTasks 'clean', 'flashbuilderClean', 'ideaClean', 'scaffold', 'test', 'compileFlex', 'compileJava', 'package', 'war', 'asdoc', 'flashbuilder', 'idea'

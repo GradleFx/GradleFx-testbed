@@ -10,3 +10,7 @@ airMobile {
     platform = 'android'
     target = 'apk'
 }
+
+additionalCompilerOptions = [
+	'-external-library-path+=libs/player/{targetPlayerMajorVersion}.{targetPlayerMinorVersion}/playerglobal.swc'
+]

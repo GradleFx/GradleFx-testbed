@@ -1,6 +1,6 @@
 type = 'swc'
 
 dependencies {
-    external project(':iml-swc-as')
+    external project(':intellij-integration:iml-swc-as')
 }
 
