@@ -9,7 +9,7 @@ subprojects { subproject ->
 	}
 
 	flashbuilderClean << {
-		['build', 'doc'].each {
+		['build', 'src', 'doc'].each {
             File file = project.file it
             if (file.exists()) {
                 LOG.info "\t$it"
