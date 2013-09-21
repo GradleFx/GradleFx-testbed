@@ -1,0 +1,3 @@
+[submodule "intellij-integration/buildSrc/gradlefx"]
+	path = intellij-integration/buildSrc/gradlefx
+	url = https://github.com/chaos-adept/GradleFx.git

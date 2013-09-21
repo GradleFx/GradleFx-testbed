@@ -1,0 +1,12 @@
+type = 'air'
+frameworkLinkage = 'none'
+mainClass = 'Main.as'
+
+additionalCompilerOptions = [
+	'-external-library-path+=libs/player/{targetPlayerMajorVersion}.{targetPlayerMinorVersion}/playerglobal.swc'
+]
+
+air {
+		applicationDescriptor   "src/main/actionscript/Main-app.xml"
+		storepass			'gradlefx'
+}

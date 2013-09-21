@@ -1,3 +1,15 @@
 type = 'mobile'
 frameworkLinkage = 'none'
-mainClass = 'MainTestApp.as'
+mainClass = 'Main.as'
+
+afterEvaluate {
+	additionalCompilerOptions = [
+		'-external-library-path+=libs/player/{targetPlayerMajorVersion}.{targetPlayerMinorVersion}/playerglobal.swc'
+	]
+}
+
+air { 
+	applicationDescriptor   "/src/main/actionscript/app-descriptor.xml"
+	storepass			'gradlefx'
+	includeFileTrees =	[fileTree(dir: 'src/main/actionscript/', include: 'assets/appIcon.png')]
+}

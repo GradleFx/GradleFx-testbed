@@ -1,21 +1,23 @@
-defaultTasks 'flashbuilderClean', 'flashbuilder'
+defaultTasks 'ideaClean', 'idea'
 
-subprojects { subproject ->
+subprojects {
 	apply plugin: 'gradlefx'
-	apply plugin: 'flashbuilder'
-
+	apply plugin: 'ideafx'
+	
+	ideaFxModuleSdkName = 'flex_sdk_4.6'
+	
 	repositories {
    		mavenCentral()
 	}
 
-	flashbuilderClean << {
-		['build', 'src', 'doc'].each {
+	ideaClean << {
+		['build', 'bin-debug', 'src', 'doc'].each {
             File file = project.file it
             if (file.exists()) {
                 LOG.info "\t$it"
                 file.isFile() ? file.delete() : file.deleteDir()
             }
 		}	
-	}
-
+	}	
+	
 }

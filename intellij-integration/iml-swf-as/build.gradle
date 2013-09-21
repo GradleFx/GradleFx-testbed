@@ -1,0 +1,8 @@
+type = 'swf'
+frameworkLinkage = 'none'
+mainClass = 'org/gradlefx/MainTestApp.as'
+//locales = ['nl_BE', 'fr_BE'] - ideafx is not covert it at the moment
+
+dependencies {
+    external project(':intellij-integration:iml-swc-as')
+}

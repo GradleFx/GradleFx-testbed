@@ -1,2 +1,7 @@
 type = 'mobile'
-mainClass = 'MainTestApp.mxml'
+
+air { 
+	applicationDescriptor   "/src/main/actionscript/app-descriptor.xml"
+	storepass			'gradlefx'
+	includeFileTrees =	[fileTree(dir: 'src/main/actionscript/', include: 'assets/appIcon.png')]
+}

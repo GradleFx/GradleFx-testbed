@@ -1,8 +1,14 @@
 type = 'swf'
-mainClass = 'org/gradlefx/MainTestApp.mxml'
+mainClass = 'org/gradlefx/Main.mxml'
+locales = ['en_US']
+
+repositories {
+	mavenRepo name: 'yoolab-releases',      url: "http://projects.yoolab.org/maven/content/repositories/releases"
+}
 
 dependencies {
-    merged project(':fb-swc-as')
-	rsl project(':fb-swc-fx')
+    merged project(':flashbuilder-integration:fb-swc-as')
+	rsl project(':flashbuilder-integration:fb-swc-fx')
 	theme files(parent.file('dependencies/wireframe.swc'))
+	external group: 'org.as3commons', name: 'as3commons-lang', version: '0.3.2', ext: 'swc'
 }

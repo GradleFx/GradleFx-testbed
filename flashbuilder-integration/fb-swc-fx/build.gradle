@@ -1,6 +1,6 @@
 type = 'swc'
 
 dependencies {
-    external project(':fb-swc-as')
+    external project(':flashbuilder-integration:fb-swc-as')
 }
 

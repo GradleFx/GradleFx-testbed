@@ -1,0 +1,5 @@
+type = 'air'
+air {
+		applicationDescriptor   "src/main/actionscript/Main-app.xml"
+		storepass				'gradlefx'
+}
