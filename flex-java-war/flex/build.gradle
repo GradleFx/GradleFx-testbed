@@ -1,3 +1,18 @@
 subprojects {
     apply plugin: 'gradlefx'
+	
+	repositories {
+		add(new org.apache.ivy.plugins.resolver.URLResolver()) {
+			name = 'Apache'
+			addArtifactPattern 'http://apache.cu.be/flex/[revision]/binaries/[module]-[revision]-bin.[ext]'
+		}
+	}
+	
+	dependencies {
+		flexSDK group: 'org.apache', name: 'apache-flex-sdk', version: '4.9.1', ext: 'zip'
+	}
+
+	sdkAutoInstall {
+		showPrompts	= false
+	}
 }
