@@ -1,4 +1,5 @@
 apply plugin: 'gradlefx'
+apply plugin: 'flashbuilder'
 
 defaultTasks 'clean', 'test', 'package'
 
@@ -6,20 +7,24 @@ version = '1.0-SNAPSHOT'
 type = 'air'
 
 repositories {
-	mavenRepo name: 'yoolab-releases',      url: "http://projects.yoolab.org/maven/content/repositories/releases"
-	add(new org.apache.ivy.plugins.resolver.URLResolver()) {
-		name = 'Apache'
-		addArtifactPattern 'http://apache.cu.be/flex/[revision]/binaries/[module]-[revision]-bin.[ext]'
+	maven { 
+		name 'yoolab-releases'
+		url "http://projects.yoolab.org/maven/content/repositories/releases"
 	}
 	
-	add(new org.apache.ivy.plugins.resolver.URLResolver()) {
-		name = 'Adobe Air SDK'
-		addArtifactPattern 'http://download.macromedia.com/air/win/download/[revision]/[module].[ext]'
+	ivy {
+		name 'Apache'
+		artifactPattern 'http://apache.cu.be/flex/[revision]/binaries/[module]-[revision]-bin.[ext]'
+	}
+	
+	ivy {
+		name 'Adobe Air SDK'
+		artifactPattern 'http://download.macromedia.com/air/win/download/[revision]/[module].[ext]'
 	}
 }
 
 //dependency versions
-as3commons_lang_version = '0.3.2'
+def as3commons_lang_version = '0.3.2'
 
 dependencies {
 	flexSDK group: 'org.apache', name: 'apache-flex-sdk', version: '4.9.1', ext: 'zip'

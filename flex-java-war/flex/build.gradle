@@ -2,9 +2,9 @@ subprojects {
     apply plugin: 'gradlefx'
 	
 	repositories {
-		add(new org.apache.ivy.plugins.resolver.URLResolver()) {
-			name = 'Apache'
-			addArtifactPattern 'http://apache.cu.be/flex/[revision]/binaries/[module]-[revision]-bin.[ext]'
+		ivy {
+			name 'Apache'
+			artifactPattern 'http://apache.cu.be/flex/[revision]/binaries/[module]-[revision]-bin.[ext]'
 		}
 	}
 	

@@ -4,7 +4,7 @@ subprojects {
 	apply plugin: 'gradlefx'
 	apply plugin: 'ideafx'
 	
-	ideaFxModuleSdkName = 'flex_sdk_4.6'
+	def ideaFxModuleSdkName = 'flex_sdk_4.6'
 	
 	repositories {
    		mavenCentral()

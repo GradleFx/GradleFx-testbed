@@ -6,13 +6,16 @@ version = '1.0-SNAPSHOT'
 type = 'swc'
 
 repositories {
-    mavenRepo name: 'glassfish-releases',   url: "http://opensource.adobe.com/svn/opensource/cairngorm3/maven-repository"
+    maven {
+		name 'glassfish-releases'
+		url "http://opensource.adobe.com/svn/opensource/cairngorm3/maven-repository"
+	}
 }
 
 //dependency versions
-hamcrest_as3_version = '1.1'
+def hamcrest_as3_version = '1.1'
 
-flexUnitHome = System.getenv()['FLEXUNIT_HOME']
+def flexUnitHome = System.getenv()['FLEXUNIT_HOME']
 
 dependencies {
     test   group: 'org.hamcrest',   name: 'hamcrest-as3',    version: hamcrest_as3_version,    ext: 'swc'

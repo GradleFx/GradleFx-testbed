@@ -12,7 +12,7 @@ airMobile {
     target = 'ipa-app-store'
     outputExtension = 'ipa'
     targetDevice = "ios"
-    provisioning_profile = 'iml-mobile-ios-as.mobileprovision'
+    provisioningProfile = 'iml-mobile-ios-as.mobileprovision'
     platformSdk = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk"
 }
 
