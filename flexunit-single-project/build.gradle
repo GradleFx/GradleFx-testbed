@@ -21,9 +21,17 @@ dependencies {
     test   group: 'org.hamcrest',   name: 'hamcrest-as3',    version: hamcrest_as3_version,    ext: 'swc'
 	test files("${flexUnitHome}/flexUnitTasks-4.1.0-8.jar",
 			   "${flexUnitHome}/flexunit-4.1.0-8-flex_4.1.0.16076.swc",
-			   "${flexUnitHome}/flexunit-cilistener-4.1.0-8-4.1.0.16076.swc")
+			   "${flexUnitHome}/flexunit-cilistener-4.1.0-8-4.1.0.16076.swc",
+			   "${flexUnitHome}/flexunit-uilistener-4.1.0-8-4.1.0.16076.swc")
 }
 
 additionalCompilerOptions.addAll([
 	"-include-lookup-only=false"
 ])
+
+flexUnit {
+	template = 'src/test/resources/CustomFlexUnitRunner.mxml'
+	additionalCompilerOptions = [
+		'-incremental=true',
+	]
+}

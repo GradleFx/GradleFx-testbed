@@ -11,6 +11,10 @@ repositories {
 		name 'yoolab-releases'
 		url "http://projects.yoolab.org/maven/content/repositories/releases"
 	}
+	maven {
+		name 'glassfish-releases'
+		url "http://opensource.adobe.com/svn/opensource/cairngorm3/maven-repository"
+	}
 	
 	ivy {
 		name 'Apache'
@@ -25,12 +29,19 @@ repositories {
 
 //dependency versions
 def as3commons_lang_version = '0.3.2'
+def flexUnitHome = System.getenv()['FLEXUNIT_HOME']
 
 dependencies {
 	flexSDK group: 'org.apache', name: 'apache-flex-sdk', version: '4.9.1', ext: 'zip'
 	airSDK group: 'com.adobe', name: 'AdobeAIRSDK', version: '3.4', ext: 'zip'
 		
 	merged group: 'org.as3commons', name: 'as3commons-lang', version: as3commons_lang_version, ext: 'swc'
+	
+	test   group: 'org.hamcrest',   name: 'hamcrest-as3',    version: '1.1',    ext: 'swc'
+	test files("${flexUnitHome}/flexUnitTasks-4.1.0-8.jar",
+			   "${flexUnitHome}/flexunit-4.1.0-8-flex_4.1.0.16076.swc",
+			   "${flexUnitHome}/flexunit-cilistener-4.1.0-8-4.1.0.16076.swc",
+			   "${flexUnitHome}/flexunit-uilistener-4.1.0-8-4.1.0.16076.swc")
 }
 
 sdkAutoInstall {
