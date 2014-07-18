@@ -9,7 +9,7 @@ subprojects {
 	}
 	
 	dependencies {
-		flexSDK group: 'org.apache', name: 'apache-flex-sdk', version: '4.9.1', ext: 'zip'
+		flexSDK group: 'org.apache', name: 'apache-flex-sdk', version: '4.12.1', ext: 'zip'
 	}
 
 	sdkAutoInstall {
