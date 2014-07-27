@@ -32,7 +32,7 @@ def as3commons_lang_version = '0.3.2'
 def flexUnitHome = System.getenv()['FLEXUNIT_HOME']
 
 dependencies {
-	flexSDK group: 'org.apache', name: 'apache-flex-sdk', version: '4.12.1', ext: 'zip'
+	flexSDK group: 'org.apache', name: 'apache-flex-sdk', version: '4.13.0', ext: 'zip'
 	airSDK group: 'com.adobe', name: 'AdobeAIRSDK', version: '3.4', ext: 'zip'
 		
 	merged group: 'org.as3commons', name: 'as3commons-lang', version: as3commons_lang_version, ext: 'swc'
