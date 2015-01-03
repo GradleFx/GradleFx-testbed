@@ -37,4 +37,5 @@ include 'actionscript-only-project',
 			'multiproject-no-conventions:util',
 		'merge-swc-packages',
 			'merge-swc-packages:domain', 
-			'merge-swc-packages:util'
+			'merge-swc-packages:util',
+		'mobile-ios'

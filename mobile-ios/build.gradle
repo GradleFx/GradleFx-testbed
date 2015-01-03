@@ -1,0 +1,79 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
+apply plugin: 'gradlefx'
+apply plugin: 'ideafx'
+
+defaultTasks 'clean', 'flashbuilderClean', 'ideaClean', 'compile', 'test', 'flashbuilder', 'idea'
+//don't execute the package task since there's no certificate or provisioning file
+project.tasks.remove(package)
+
+type = 'mobile'
+version = '1.0.0'
+mainClass = 'Main.as'
+playerVersion = '15.0'
+
+def flexUnitHome = System.getenv()['FLEXUNIT_HOME']
+
+def additionalCompilerArguments = [
+        '-swf-version=26',
+        '-debug=true',
+        '-inline',
+        '-keep-as3-metadata+=Inline,Inject,Embed,ChangeEvent,Managed,NonCommittingChangeEvent,PostConstruct,PreDestroy,Transient']
+
+repositories {
+    mavenLocal()
+    maven {
+        name 'Starling repo'
+        url 'https://raw.githubusercontent.com/tconkling/maven-repo/master/'
+    }
+    ivy {
+        name 'Adobe Air SDK'
+        artifactPattern Os.isFamily(Os.FAMILY_WINDOWS) ?
+                'http://airdownload.adobe.com/air/win/download/[revision]/[module]_Compiler.[ext]' :
+                'http://airdownload.adobe.com/air/mac/download/[revision]/[module]_Compiler.[ext]'
+    }
+}
+
+dependencies {
+    airSDK group: 'com.adobe', name: 'AIRSDK', version: '15.0', ext: Os.isFamily(Os.FAMILY_WINDOWS) ? 'zip' : 'tbz2'
+
+    merged files("lib/flurry-0.5.0.ane")
+
+    merged group: 'com.gamua', name: 'starling-framework', version: '1.5', ext: 'swc'
+
+    test files("${flexUnitHome}/flexUnitTasks-4.1.0-8.jar",
+               "${flexUnitHome}/flexunit-4.1.0-8-as3_4.1.0.16076.swc",
+               "${flexUnitHome}/flexunit-aircilistener-4.1.0-8-4.1.0.16076.swc",
+               "${flexUnitHome}/flexunit-cilistener-4.1.0-8-4.1.0.16076.swc",
+               "${flexUnitHome}/flexunit-uilistener-4.1.0-8-4.1.0.16076.swc")
+}
+
+additionalCompilerOptions = additionalCompilerArguments
+
+sdkAutoInstall {
+    showPrompts = false
+}
+
+airMobile {
+    platform = 'ios'
+    target = 'ipa-debug-interpreter'
+    outputExtension = 'ipa'
+    provisioningProfile = 'certificates/development/development.mobileprovision'
+}
+
+air {
+    keystore = 'certificates/development/ios_development.p12'
+    storepass = 'my certificate password'
+    applicationDescriptor = 'src/main/resources/application-descriptor.xml'
+    fileOptions = [
+        '-C','media/icons',
+        '.',
+        '-C','media/splashscreen',
+        '.'
+    ]
+}
+
+flexUnit {
+    additionalCompilerOptions = additionalCompilerArguments
+    template = buildDir.toString() + "/reports/FlexUnitRunnerTemplate.as"
+}
