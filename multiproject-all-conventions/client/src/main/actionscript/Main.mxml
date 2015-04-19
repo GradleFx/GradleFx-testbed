@@ -5,10 +5,8 @@
         <![CDATA[
         import mx.controls.Alert;
 
-        import org.as3commons.lang.StringUtils;
-
         private function get alertMessage():String {
-            return StringUtils.deleteWhitespace("Hello world without spaces");
+            return "Hello world without spaces";
         }
         ]]>
     </fx:Script>
